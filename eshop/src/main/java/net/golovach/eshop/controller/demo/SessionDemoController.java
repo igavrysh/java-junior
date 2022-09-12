@@ -12,7 +12,7 @@ public class SessionDemoController extends HttpServlet {
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
 //        HttpSession session = request.getSession(true);
-//        HttpSession session = request.getSession(false);
+//       HttpSession session = request.getSession(false);
         HttpSession session = request.getSession();
         AtomicInteger counter = (AtomicInteger)session.getAttribute("counter");
         if (counter == null) {

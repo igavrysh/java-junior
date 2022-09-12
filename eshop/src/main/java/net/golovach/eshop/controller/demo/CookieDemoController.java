@@ -11,7 +11,10 @@ import java.io.IOException;
  * Created by BELSHINA on 12.02.2017.
  */
 public class CookieDemoController extends HttpServlet {
-    private static final String COOKIE_NAME = "counter";
+	
+    private static final long serialVersionUID = 1L;
+    
+	private static final String COOKIE_NAME = "counter";
 
     protected void doGet(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {

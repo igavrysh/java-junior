@@ -15,7 +15,9 @@ import java.util.List;
 // todo: ссылки на IoC материалы
 
 public class DependencyInjectionServlet extends HttpServlet {
-    private static final String APP_CTX_PATH = "contextConfigLocation";
+    private static final long serialVersionUID = 1L;
+    
+	private static final String APP_CTX_PATH = "contextConfigLocation";
 
     @Override
     public final void init() throws ServletException {

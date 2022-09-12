@@ -34,7 +34,7 @@ public class RequestInfoFilter extends BaseFilter {
 
         //response.getOutputStream();
         //response.getWriter();
-        response.sendError(400);
+        //response.sendError(400);
 
 //        response.sendRedirect("dsfsdfsd");
     }
