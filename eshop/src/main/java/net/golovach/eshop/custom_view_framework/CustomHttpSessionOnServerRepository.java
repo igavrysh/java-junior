@@ -7,8 +7,10 @@ import java.util.concurrent.ConcurrentHashMap;
 //todo: realize old session clearing functionality
 //  sol1: CustomHttpSessionOnServerRepository - new thread every second / minute checks
 //      sessions and removes which are expired
-//  sol2: Thread wakes in 20min to kill 20min session and in 30min to kill 30min session
-//  sol3: in getSession(...) do clearOldSession() - without new thread
+//  sol2: Thread wakes in 20min to kill 20min session and in 30min to kill 30min session (think what happens
+//      when customer prolongs session
+//  sol3: in getSession(...) do clearOldSession() - without new thread, aka ArrayList works internally
+//      resizing capacity array when add is called
 //todo: realize session listeners functionality
 //todo: rewrite product bucket to this session implementation
 
