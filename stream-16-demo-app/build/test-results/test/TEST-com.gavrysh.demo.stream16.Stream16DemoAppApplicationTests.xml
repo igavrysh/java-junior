@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.gavrysh.demo.stream16.Stream16DemoAppApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-09T02:15:40" hostname="news-MacBook-Pro.local" time="0.004">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.gavrysh.demo.stream16.Stream16DemoAppApplicationTests" time="0.004"/>
+  <system-out><![CDATA[19:15:37.072 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.gavrysh.demo.stream16.Stream16DemoAppApplicationTests], using SpringBootContextLoader
+19:15:37.073 [Test worker] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.gavrysh.demo.stream16.Stream16DemoAppApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+19:15:37.073 [Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gavrysh.demo.stream16.Stream16DemoAppApplicationTests]: Stream16DemoAppApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:15:37.082 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gavrysh.demo.stream16.Stream16DemoAppApplication for test class com.gavrysh.demo.stream16.Stream16DemoAppApplicationTests
+19:15:37.092 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener]
+19:15:37.094 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@79454d8e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7ab2e018, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4e13af1b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@468eff41, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1574f323, org.springframework.test.context.support.DirtiesContextTestExecutionListener@78ab63b5, org.springframework.test.context.event.EventPublishingTestExecutionListener@2b9370cc, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1a56f608, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2809e38a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@b9c9bf5, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3b399f5a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@16f2d883, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@71806c64]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.4)
+
+19:15:37.146 [Test worker] INFO  c.g.d.s.Stream16DemoAppApplicationTests - Starting Stream16DemoAppApplicationTests using Java 17.0.4.1 on news-MacBook-Pro.local with PID 37135 (started by new in /Users/new/Developer/java/java-junior/stream-16-demo-app)
+19:15:37.146 [Test worker] DEBUG c.g.d.s.Stream16DemoAppApplicationTests - Running with Spring Boot v2.7.4, Spring v5.3.23
+19:15:37.146 [Test worker] INFO  c.g.d.s.Stream16DemoAppApplicationTests - No active profile set, falling back to 1 default profile: "default"
+19:15:40.768 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+19:15:40.872 [Test worker] INFO  c.g.d.s.Stream16DemoAppApplicationTests - Started Stream16DemoAppApplicationTests in 3.772 seconds (JVM running for 13.966)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
