@@ -44,6 +44,8 @@ docker run -p 8899:8080 -t docker.io/library/stream-16-demo-app:0.0.1-SNAPSHOT
 
 ## Minikube
 
+Good doc starting point: https://minikube.sigs.k8s.io/docs/start/
+
 0. Start
 ```shell
 minikube start
@@ -78,14 +80,14 @@ kubectl get pods
 ```shell
 kubectl port-forward <POD_NAME from kubectl get pods> 7777:8080
 ```
+
+in next tab
 ```
 curl localhost:7777/actuator/info
 ```
 
-## to stop minikube:
+5. to stop minikube:
 ```shell
 minikube stop
 ```
-
-
 
