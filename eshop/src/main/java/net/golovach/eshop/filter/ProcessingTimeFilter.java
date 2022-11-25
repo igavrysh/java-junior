@@ -16,18 +16,18 @@ public class ProcessingTimeFilter implements Filter {
         System.out.println(">> ProcessingTimeFilter - init");
     }
 
-
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws ServletException, IOException
+    {
         long inTime = System.nanoTime();
         chain.doFilter(request, response);
         long outTime = System.nanoTime();
-    System.out.println(">> ProcessingTimeFilter: dt = " + (outTime - inTime));
-    System.out.println();
+        System.out.println(">> ProcessingTimeFilter: dt = " + (outTime - inTime));
+        System.out.println();
     }
 
     public void destroy() {
         System.out.println(">> ProcessingTimeFilter - destroy");
     }
-
 
 }

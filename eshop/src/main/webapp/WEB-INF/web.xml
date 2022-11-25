@@ -174,7 +174,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>appContext-dao.xml</param-value>
+        <param-value>appContext-dao-aop-schema.xml</param-value>
     </context-param>
 
 </web-app>
