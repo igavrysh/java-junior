@@ -24,13 +24,10 @@ public class ProductDaoMock implements ProductDao {
 
     public Product selectById(int id) throws DaoSystemException, NoSuchEntityException {
 
-        // todo: temporary, aop demo (exception interception
-        if (id == 123) {
-            throw new Error("Hello from magic bad id!");
-        }
 
         if (!memory.containsKey(id)) {
-            throw new NoSuchEntityException("No Product for if == '" + id + "', only");
+            throw new NoSuchEntityException("No Product for if == '" + id
+                    + "', only for " + memory.keySet());
         }
         return memory.get(id);
     }
