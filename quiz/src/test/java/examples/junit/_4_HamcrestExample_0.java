@@ -44,7 +44,7 @@ public class _4_HamcrestExample_0 {
     @Test
     public void test_hamcrest_long() {
         list.add("A");
-        Assert.assertThat(list.get(0), CoreMatchers.is("A"));
+        assertThat(list.get(0), CoreMatchers.is("A"));
     }
 
     @Test

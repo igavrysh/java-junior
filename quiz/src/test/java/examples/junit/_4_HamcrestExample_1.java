@@ -12,8 +12,12 @@ import java.util.List;
 import static java.lang.Math.sin;
 import static java.util.Arrays.asList;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.closeTo;
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.anyOf;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.not;
 
 public class _4_HamcrestExample_1 {
 
@@ -38,14 +42,14 @@ public class _4_HamcrestExample_1 {
     @Test
     public void test_X_or_Y() {
         List<String> list = asList("A", "Y", "X");
-        assertThat(list, anyOf(hasItem("X"), hasItem("Y")));
+        assertThat(list, anyOf(allOf(hasItem("X")), allOf(hasItem("Y"))));
     }
 
     @Test
     public void test_onlyX_or_onlyY() {
         //List<String> list = asList("A", "X", "Y");
         List<String> list = asList("A", "X", "*");
-        assertThat(list, anyOf(allOf(hasItem("X"), not(hasItem("Y"))), allOf(not(hasItem("X")), hasItem("Y"))));
+        assertThat(list, anyOf(allOf(hasItem("X"), not(hasItem("Y"))), allOf(hasItem("X"), hasItem("Y"))));
     }
 
     // ref.f().g().h().x(); // method chaining
