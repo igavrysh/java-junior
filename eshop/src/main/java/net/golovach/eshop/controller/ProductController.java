@@ -27,7 +27,7 @@ public class ProductController extends DependencyInjectionServlet {
 //    @Inject(value="productDao", age=5)
 //    @Inject(name="productDao")
 //    @Inject(name="productDao", authors = {"Anna", "Mike")
-    private ProductDao productDao;
+     ProductDao productDao;
 
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
