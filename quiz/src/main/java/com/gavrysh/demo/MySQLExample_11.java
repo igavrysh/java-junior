@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class MySQLExample_11 {
     public static final String JDBC_URL
-            = "jdbc:mysql://127.0.0.1:3306?quiz_db";
+            = "jdbc:mysql://127.0.0.1:3306/quiz_db";
 
     public static void main(String[] args) throws SQLException {
         Driver driver = new Driver();
