@@ -9,6 +9,7 @@
         <br/>requestAttribute.map['key-0'] = ${requestAttribute.map['key-0']}
         <br/>requestAttribute.map['key-0'] =
     <%= ((DemoEntityA)request.getAttribute("requestAttribute")).getMap().get("key-0")%>
+    <%= 
 
         <br/>requestAttribute.mockEntityB.str = ${requestAttribute.mockEntityB.str}
         <br/>requestAttribute.mockEntityB.str =
