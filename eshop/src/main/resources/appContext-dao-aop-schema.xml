@@ -31,6 +31,6 @@
         </aop:aspect>
     </aop:config>
 
-    <bean id="productDao" class="net.golovach.eshop.dao.impl.ProductDaoMock" />
+    <bean id="productDao" class="net.golovach.eshop.dao.impl.mock.ProductDaoMock" />
 
 </beans>

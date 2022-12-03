@@ -2,7 +2,7 @@ package net.golovach.eshop.controller;
 
 import net.golovach.eshop.dao.ProductDao;
 import net.golovach.eshop.dao.exception.DaoSystemException;
-import net.golovach.eshop.dao.impl.ProductDaoMock;
+import net.golovach.eshop.dao.impl.mock.ProductDaoMock;
 import net.golovach.eshop.entity.Product;
 
 import javax.servlet.RequestDispatcher;

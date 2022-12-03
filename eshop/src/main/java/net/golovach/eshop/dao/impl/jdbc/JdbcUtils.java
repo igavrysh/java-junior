@@ -1,4 +1,4 @@
-package net.golovach.eshop.util;
+package net.golovach.eshop.dao.impl.jdbc;
 
 import java.io.Closeable;
 import java.sql.Connection;

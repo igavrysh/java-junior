@@ -1,4 +1,4 @@
-package net.golovach.eshop.dao.impl;
+package net.golovach.eshop.dao.impl.mock;
 
 import net.golovach.eshop.dao.ProductDao;
 import net.golovach.eshop.dao.exception.DaoSystemException;
