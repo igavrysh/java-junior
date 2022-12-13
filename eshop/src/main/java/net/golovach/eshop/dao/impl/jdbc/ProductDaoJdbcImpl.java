@@ -4,7 +4,6 @@ import net.golovach.eshop.dao.ProductDao;
 import net.golovach.eshop.dao.exception.DaoSystemException;
 import net.golovach.eshop.dao.exception.NoSuchEntityException;
 import net.golovach.eshop.entity.Product;
-import net.golovach.eshop.dao.impl.jdbc.JdbcUtils;
 
 import java.sql.*;
 import java.util.List;

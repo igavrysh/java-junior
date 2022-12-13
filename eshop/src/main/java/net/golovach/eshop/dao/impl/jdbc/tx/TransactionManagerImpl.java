@@ -6,8 +6,10 @@ import net.golovach.eshop.dao.impl.jdbc.JdbcUtils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class TransactionManagerImpl extends BaseDataSource implements TransactionManager {
 
@@ -49,3 +51,73 @@ public class TransactionManagerImpl extends BaseDataSource implements Transactio
         }
     }
 }
+
+class MyThreadLocal<T> {
+    // For GC to collect Thread here we should used weak
+    // reference to THread instead of strong reference used below
+    private Map<Thread, T> holder = new ConcurrentHashMap<>();
+
+    public T get() {
+        return holder.get(Thread.currentThread());
+    }
+
+    public void set(T elem) {
+        holder.put(Thread.currentThread(), elem);
+    }
+}
+
+class Test {
+    public static void main(String[] args) throws InterruptedException {
+        // ThreadLocal
+        final ThreadLocal<String> local
+                = new ThreadLocal<>();
+        System.out.println(local.get());
+        local.set("Hello!");
+        Thread t = new Thread(() -> {
+            System.out.println("T2: " + local.get()) ;
+        });
+        t.start();
+        t.join();
+
+        System.out.println(local.get());
+    }
+}
+
+class Test2 {
+    public static void main(String[] args) throws InterruptedException {
+        // they monitor that new Thread was created in current thread
+        // and pass a copy of variables (cached) to a new child
+        final InheritableThreadLocal<String> local
+                = new InheritableThreadLocal<>();
+        System.out.println(local.get());
+        local.set("Hello!");
+        Thread t = new Thread(() -> {
+            System.out.println("T2: " + local.get());
+        });
+        t.start();
+        t.join();
+
+        System.out.println(local.get());
+    }
+}
+
+class Test3 {
+    public static void main(String[] args) throws InterruptedException {
+        // ThreadLocal
+        final InheritableThreadLocal<String> local = new InheritableThreadLocal<>();
+        System.out.println(local.get());
+        local.set("Hello!");
+        Thread t = new Thread(() -> {
+            System.out.println("T2: " + local.get()) ;
+            local.set("XXX");
+            System.out.println("T2: " + local.get()) ;
+        });
+        t.start();
+        t.join();
+
+        System.out.println(local.get());
+    }
+}
+
+
+
