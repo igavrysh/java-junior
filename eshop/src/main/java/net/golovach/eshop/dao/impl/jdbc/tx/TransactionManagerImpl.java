@@ -53,8 +53,8 @@ public class TransactionManagerImpl extends BaseDataSource implements Transactio
 }
 
 class MyThreadLocal<T> {
-    // For GC to collect Thread here we should used weak
-    // reference to THread instead of strong reference used below
+    // For GC to collect Thread here we should use weak
+    // reference to Thread instead of strong reference used below
     private Map<Thread, T> holder = new ConcurrentHashMap<>();
 
     public T get() {
