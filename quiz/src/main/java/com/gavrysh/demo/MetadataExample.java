@@ -19,7 +19,9 @@ public class MetadataExample {
     public static void main(String[] args) throws SQLException {
         Connection conn = getConnection();
         DatabaseMetaData metaData = conn.getMetaData();
+        //dumpDbGeneralInfo(metaData);
         dumpDbConstraints(metaData);
+        //metaData.getCatalogs()
     }
 
     public static Connection getConnection() throws SQLException {
