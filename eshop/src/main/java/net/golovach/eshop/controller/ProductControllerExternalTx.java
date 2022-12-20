@@ -23,13 +23,11 @@ public class ProductControllerExternalTx extends DependencyInjectionServlet {
     public static final String PAGE_OK = "product.jsp";
     public static final String PAGE_ERROR = "error.jsp";
 
-
     @Inject("txManager")
     TransactionManager txManager;
 
     @Inject("productDao")
     ProductDao productDao;
-
 
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {

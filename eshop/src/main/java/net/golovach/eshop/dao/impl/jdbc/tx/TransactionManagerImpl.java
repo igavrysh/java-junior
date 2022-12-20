@@ -8,7 +8,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Map;
 import java.util.Properties;
-import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class TransactionManagerImpl extends BaseDataSource implements TransactionManager {
@@ -24,17 +23,17 @@ public class TransactionManagerImpl extends BaseDataSource implements Transactio
     private static ThreadLocal<Connection> connectionHolder = new ThreadLocal<>();
 
     @Override
-    public <T> T doInTransaction(Callable<T> unitOfWork) throws Exception {
-        Connection conn = DriverManager.getConnection(JDBC_URL);
-        conn.setAutoCommit(false);
-        connectionHolder.set(conn);
+    public <T, E extends Exception> T doInTransaction(UnitOfWork<T, E> unitOfWork) throws E, SQLException {
+        Connection conn = null;
         try {
-            T result = unitOfWork.call();
-            conn.commit();;
+            conn = DriverManager.getConnection(JDBC_URL);
+            connectionHolder.set(conn);
+            T result = unitOfWork.doInTx();
+            conn.commit();
             return result;
-        } catch (Exception e) {
+        } catch (SQLException sqlException) {
             conn.rollback();
-            throw e;
+            throw sqlException;
         } finally {
             JdbcUtils.closeQuietly(conn);
             connectionHolder.remove();

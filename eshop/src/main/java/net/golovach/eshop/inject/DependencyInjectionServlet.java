@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import java.lang.reflect.Field;
 import java.util.List;
 
+import static net.golovach.eshop.inject.ApplicationContextHolder.getClassPathXmlApplicationContext;
+
 /**
  * Created by BELSHINA on 13.02.2017.
  */
@@ -30,7 +32,7 @@ public class DependencyInjectionServlet extends HttpServlet {
         }
         try {
             //load AppContext
-            ApplicationContext appCtx = new ClassPathXmlApplicationContext(appCtxPath);
+            ApplicationContext appCtx = getClassPathXmlApplicationContext(appCtxPath); //!!! ERROR if used next - new ClassPathXmlApplicationContext(appCtxPath);
             //than inject from AppContext to all marked by @Inject field
             List<Field> allFields = FieldReflector.collectUpTo(this.getClass(), DependencyInjectionServlet.class);
             List<Field> injectFields = FieldReflector.filterInject(allFields);
